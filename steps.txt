@@ -1,0 +1,33 @@
+install node.js
+cmd - "npm -v" check if installed
+cmd - "npm init" creates packaged 
+
+
+-- Papa Parse --
+//Documentation
+http://papaparse.com/docs
+
+//npm install
+$ npm install papaparse
+
+//use in js file
+var Papa = require('papaparse');
+
+//Read file then parse example
+csv_file = readFileThenParse("./test_csv.csv");
+
+function readFileThenParse(filepath){
+    fs.readFile(filepath, 'utf-8', function (err, filedata) {
+          if(err){
+              alert("An error ocurred reading the file :" + err.message);
+              return;
+          }
+// Once file is read, then parse it
+            Papa.parse(filedata, {
+            complete: function(results) {
+            console.log("Finished:", results.data);
+            }
+            });
+          return filedata;
+    });
+}

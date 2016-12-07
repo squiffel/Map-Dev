@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fine Uploader Gallery View Demo</title>
+</head>
+<body>
+    <script>
+		var fileSelector = document.createElement('input');
+		fileSelector.setAttribute('type', 'file');
+
+		var selectDialogueLink = document.createElement('a');
+		selectDialogueLink.setAttribute('href', '');
+		selectDialogueLink.innerText = "Select File";
+
+		selectDialogueLink.onclick = function () {
+			 fileSelector.click();
+			 alert(fileSelector.value);
+			 return false;
+		}
+
+		document.body.appendChild(selectDialogueLink);
+    </script>
+</body>
+</html>
